@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Simulado de nivelamento</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: linear-gradient(150deg, #0b1e7a, #071757 9%, #00031a 28%, #00020a 41%, #000 52%, #000 82%, #140e00 90%, #332000, #5c3900);
+            color: #e5e7eb;
+        }
+        .glass-panel {
+            background-color: rgba(12, 16, 44, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(64, 77, 109, 0.8);
+        }
+        .btn-action {
+            background-image: linear-gradient(to right, #7a5c0033, #fabe19cc);
+            border-color: rgb(250 190 25);
+        }
+        .sidebar-bg {
+            background: linear-gradient(322deg, rgba(11, 30, 122, 0.8) 0%, rgba(0, 3, 26, 0.8) 32%, rgba(6, 7, 12, 0.8) 75%, rgba(8, 8, 8, 0.8) 100%);
+            backdrop-filter: blur(5px);
+            border-right: 1px solid rgba(64, 77, 109, 0.8);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+<div class="flex h-screen">
+<aside class="w-64 sidebar-bg flex-shrink-0 flex flex-col p-6">
+<div class="flex items-center space-x-3 mb-12">
+<div class="bg-yellow-500 rounded-full p-2">
+<span class="material-icons text-black">school</span>
+</div>
+<span class="font-bold text-xl text-white">MedCof</span>
+</div>
+<nav class="space-y-4">
+<a class="flex items-center text-gray-300 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors" href="#">
+<span class="material-icons mr-3">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center text-white bg-white/10 px-4 py-2 rounded-lg transition-colors" href="#">
+<span class="material-icons mr-3">book</span>
+                Disciplinas
+            </a>
+<a class="flex items-center text-gray-300 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors" href="#">
+<span class="material-icons mr-3">schedule</span>
+                Cronograma
+            </a>
+<a class="flex items-center text-gray-300 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors" href="#">
+<span class="material-icons mr-3">bar_chart</span>
+                Desempenho
+            </a>
+<a class="flex items-center text-gray-300 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors" href="#">
+<span class="material-icons mr-3">notifications</span>
+                Notificações
+            </a>
+</nav>
+<div class="mt-auto">
+<a class="flex items-center text-gray-300 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors" href="#">
+<span class="material-icons mr-3">settings</span>
+                Configurações
+            </a>
+<a class="flex items-center text-gray-300 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors mt-2" href="#">
+<span class="material-icons mr-3">logout</span>
+                Sair
+            </a>
+</div>
+</aside>
+<div class="flex-1 flex flex-col overflow-y-auto">
+<header class="sticky top-0 z-10 flex items-center justify-between px-8 py-4 bg-black/30 backdrop-blur-sm border-b border-gray-700/50">
+<div class="flex items-center space-x-4">
+<h1 class="text-xl font-bold text-white">Respondedor de Questões - Referência Exata</h1>
+</div>
+<div class="flex items-center space-x-6">
+<button class="text-gray-300 hover:text-white">
+<span class="material-icons">search</span>
+</button>
+<button class="text-gray-300 hover:text-white relative">
+<span class="material-icons">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
+</button>
+<div class="w-10 h-10 rounded-full bg-gray-600"></div>
+</div>
+</header>
+<div class="p-8">
+<button class="flex items-center text-gray-300 hover:text-white bg-white/5 hover:bg-white/10 p-2 rounded-lg transition-colors mb-4">
+<span class="material-icons text-xl">arrow_back</span>
+<span class="ml-2 font-medium">Voltar</span>
+</button>
+<div class="glass-panel rounded-lg p-4 mb-6">
+<header class="flex justify-between items-center">
+<div>
+<h2 class="text-lg font-semibold text-white">Questão 1 de 100</h2>
+<p class="text-sm text-gray-400 mt-1">HSP-EPM 2025 - IBFC HSP-EPM + IBPC * 2025</p>
+</div>
+<div class="flex items-center space-x-2">
+<button class="flex items-center px-3 py-1.5 rounded-md text-sm text-gray-300 hover:bg-white/10 transition-colors">
+<span class="material-icons text-base mr-1">chevron_left</span> Anterior
+                        </button>
+<span class="text-sm font-medium px-3 text-gray-200">1/100</span>
+<button class="flex items-center px-3 py-1.5 rounded-md text-sm text-gray-300 hover:bg-white/10 transition-colors">
+                            Próxima <span class="material-icons text-base ml-1">chevron_right</span>
+</button>
+</div>
+</header>
+</div>
+<div class="flex flex-col lg:flex-row flex-1 gap-8">
+<main class="flex-1 flex flex-col">
+<div class="flex-1 glass-panel p-6 rounded-lg">
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-400 mb-2">Questão 1 de 100</p>
+<p class="text-gray-300">Entre as alternativas a seguir, assinale aquela que apresenta uma alteração para a qual, ao exame proctológico, está indicado o uso de pomada tópica de Diltiazen a 2% na região anal.</p>
+</div>
+<div class="space-y-3">
+<div class="flex items-start p-4 rounded-lg bg-green-500/20 border border-green-500 text-white cursor-pointer">
+<div class="flex items-center justify-center w-8 h-8 rounded-md bg-green-500 mr-4 font-bold text-sm flex-shrink-0">A</div>
+<p class="text-sm">Sangramento anal com dor contínua há 8 semanas, associado à presença de plicoma, ulceração na linha média anterior, hipertonia esfincteriana e papila hipertrófica.</p>
+</div>
+<div class="flex items-start p-4 rounded-lg bg-white/5 border border-gray-700 hover:bg-white/10 transition-colors cursor-pointer">
+<div class="flex items-center justify-center w-8 h-8 rounded-md bg-gray-700 mr-4 font-bold text-sm flex-shrink-0">B</div>
+<p class="text-sm text-gray-300">Sangramento anal sem dor há 6 semanas, associado à presença de abaulamento perianal com saída de secreção purulenta e ulceração na linha média posterior.</p>
+</div>
+<div class="flex items-start p-4 rounded-lg bg-white/5 border border-gray-700 hover:bg-white/10 transition-colors cursor-pointer">
+<div class="flex items-center justify-center w-8 h-8 rounded-md bg-gray-700 mr-4 font-bold text-sm flex-shrink-0">C</div>
+<p class="text-sm text-gray-300">Sangramento anal sem dor há 3 semanas, associado à presença de abaulamento anal durante as evacuações que regride espontaneamente.</p>
+</div>
+<div class="flex items-start p-4 rounded-lg bg-white/5 border border-gray-700 hover:bg-white/10 transition-colors cursor-pointer">
+<div class="flex items-center justify-center w-8 h-8 rounded-md bg-gray-700 mr-4 font-bold text-sm flex-shrink-0">D</div>
+<p class="text-sm text-gray-300">Sangramento anal com dor durante as evacuações há 3 semanas, associado à presença de ulceração superficial na linha média posterior e papila hipertrófica.</p>
+</div>
+<div class="flex items-start p-4 rounded-lg bg-white/5 border border-gray-700 hover:bg-white/10 transition-colors cursor-pointer">
+<div class="flex items-center justify-center w-8 h-8 rounded-md bg-gray-700 mr-4 font-bold text-sm flex-shrink-0">E</div>
+<p class="text-sm text-gray-300">Sangramento anal com incômodo local há 8 semanas, associado à presença de múltiplas lesões verrucosas na margem anal.</p>
+</div>
+</div>
+</div>
+<footer class="mt-auto pt-6 flex justify-end">
+<button class="btn-action text-black font-bold py-2.5 px-6 rounded-lg flex items-center transition-opacity hover:opacity-90 border">
+                            Próxima questão
+                            <span class="material-icons text-lg ml-2">arrow_forward</span>
+</button>
+</footer>
+</main>
+<aside class="w-full lg:w-80 lg:flex-shrink-0">
+<div class="glass-panel p-6 rounded-lg h-full">
+<h3 class="font-bold text-white mb-4">Cartão resposta</h3>
+<div class="flex items-center space-x-4 mb-6 text-xs text-gray-300">
+<div class="flex items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-green-500 mr-1.5"></span> Acertou
+                            </div>
+<div class="flex items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-red-500 mr-1.5"></span> Errou
+                            </div>
+<div class="flex items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-gray-600 border border-gray-500 mr-1.5"></span> Anulada
+                            </div>
+</div>
+<div class="grid grid-cols-7 gap-2 text-sm text-center max-h-[calc(100vh-250px)] overflow-y-auto pr-2">
+<button class="h-8 rounded-md bg-green-500 text-white font-semibold">1</button>
+<button class="h-8 rounded-md bg-red-500 text-white font-semibold">2</button>
+<button class="h-8 rounded-md bg-gray-800 text-gray-300 hover:bg-gray-700">3</button>
+<button class="h-8 rounded-md bg-gray-800 text-gray-300 hover:bg-gray-700">4</button>
+<button class="h-8 rounded-md bg-gray-800 text-gray-300 hover:bg-gray-700">5</button>
+<button class="h-8 rounded-md bg-gray-800 text-gray-300 hover:bg-gray-700">6</button>
+<button class="h-8 rounded-md bg-gray-800 text-gray-300 hover:bg-gray-700">7</button>
+<button class="h-8 rounded-md bg-gray-800 text-gray-300 hover:bg-gray-700">8</button>
+<button class="h-8 rounded-md bg-gray-800 text-gray-300 hover:bg-gray-700">9</button>
+<button class="h-8 rounded-md bg-gray-800 text-gray-300 hover:bg-gray-700">10</button>
+<button class="h-8 rounded-md bg-gray-800 text-gray-300 hover:bg-gray-700">11</button>
+<button class="h-8 rounded-md bg-gray-800 text-gray-300 hover:bg-gray-700">12</button>
+<button class="h-8 rounded-md bg-gray-800 text-gray-300 hover:bg-gray-700">13</button>
+<button class="h-8 rounded-md bg-gray-800 text-gray-300 hover:bg-gray-700">14</button>
+<button class="h-8 rounded-md bg-gray-800 text-gray-300 hover:bg-gray-700">15</button>
+<script>
+                                for (let i = 16; i <= 100; i++) {
+                                    document.write(`<button class="h-8 rounded-md bg-gray-800 text-gray-300 hover:bg-gray-700">${i}</button>`);
+                                }
+                            </script>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</div>
+</div>
+</body></html>
